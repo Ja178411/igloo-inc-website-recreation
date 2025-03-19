@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igloo Inc - Creating the largest onchain community</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-text">Loading...</div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="assets/logo.svg" alt="Igloo Inc"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our mission is to create the largest onchain community, driving the consumer crypto revolution.</h1>
+                <div class="hero-3d">
+                    <!-- 3D WebGL Canvas for Igloo model -->
+                    <canvas id="hero-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="project-container">
+                <!-- Project 1: Pudgy Penguins -->
+                <div class="project-item" data-project="pudgy-penguins">
+                    <div class="ice-block">
+                        <canvas class="ice-canvas" id="ice-canvas-1"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h2>Pudgy Penguins</h2>
+                        <p>Pudgy Penguins is a collection of 8,888 NFTs that have become a cultural phenomenon in the Web3 space.</p>
+                        <a href="https://pudgypenguins.com" class="project-link" target="_blank">Visit Site</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: OverpassIP -->
+                <div class="project-item" data-project="overpass-ip">
+                    <div class="ice-block">
+                        <canvas class="ice-canvas" id="ice-canvas-2"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h2>OverpassIP</h2>
+                        <p>OverpassIP helps brands protect and monetize their intellectual property in the digital world.</p>
+                        <a href="#" class="project-link" target="_blank">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>About Igloo Inc</h2>
+                <p>Igloo Inc is the parent company to Pudgy Penguins and OverpassIP. Our mission is to create the largest onchain community, driving the consumer crypto revolution.</p>
+                <p>We're building brands that bridge the gap between Web3 and traditional consumer markets, making crypto accessible and approachable for everyone.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logo.svg" alt="Igloo Inc">
+                </div>
+                <div class="footer-links">
+                    <div class="social-links">
+                        <a href="https://twitter.com/iglooincxyz" target="_blank">Twitter</a>
+                        <a href="https://www.linkedin.com/company/iglooinc/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-info">
+                        <a href="mailto:info@igloo.inc">info@igloo.inc</a>
+                    </div>
+                </div>
+                <div class="particles-container">
+                    <canvas id="particles-canvas"></canvas>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Igloo Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
