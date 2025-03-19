@@ -1,0 +1,400 @@
+/* Base Styles */
+:root {
+    --primary-color: #383e4e;
+    --secondary-color: #b6bac5;
+    --background-color: #f8f8f8;
+    --text-color: #383e4e;
+    --light-text-color: #b6bac5;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor for custom cursor */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.loading-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 3px;
+    background-color: var(--light-text-color);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+/* Main Content */
+.main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 40px;
+}
+
+.nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.hero-3d {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+#hero-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Projects Section */
+.projects {
+    padding: 150px 0;
+}
+
+.project-container {
+    padding: 0 10%;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 150px;
+    position: relative;
+}
+
+.ice-block {
+    width: 50%;
+    height: 500px;
+    position: relative;
+}
+
+.ice-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.project-info {
+    width: 50%;
+    padding-left: 80px;
+}
+
+.project-info h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+}
+
+.project-link {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* About Section */
+.about {
+    padding: 100px 10%;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+    padding: 80px 10% 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-logo {
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.social-links a, .contact-info a {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.1rem;
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#particles-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.copyright {
+    border-top: 1px solid var(--light-text-color);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .project-info h2, .about h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero-3d {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        margin-top: 50px;
+    }
+    
+    .project-item {
+        flex-direction: column;
+    }
+    
+    .ice-block, .project-info {
+        width: 100%;
+    }
+    
+    .project-info {
+        padding-left: 0;
+        padding-top: 50px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 30px;
+    }
+    
+    .nav ul li {
+        margin-left: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .project-container, .about {
+        padding: 0 30px;
+    }
+    
+    .project-info h2, .about h2 {
+        font-size: 2rem;
+    }
+    
+    .footer {
+        padding: 60px 30px 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+    }
+    
+    .social-links {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .nav {
+        display: none; /* Hide nav on smallest screens - would need a mobile menu */
+    }
+}
